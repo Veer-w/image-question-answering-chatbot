@@ -1,26 +1,29 @@
-Image Question-Answering System using BLIP-2
+# Image Question-Answering System using BLIP-2
+
 This repository hosts an interactive question-answering system that uses the BLIP-2 (Bootstrapping Language-Image Pre-training) model from Hugging Face to answer questions based on image content. By loading an image and entering a question, users can get AI-generated responses that analyze and describe elements of the image.
 
-Model Overview
-This project uses the BLIP-2 (Bootstrapping Language-Image Pre-training) model, specifically Salesforce/blip2-opt-2.7b, from Hugging Face. BLIP-2 combines vision and language pre-training, enabling the model to understand and generate text responses relevant to the visual content of an image.
+## Model Overview
 
-Features
-Image Processing: Loads an image and processes it with the BLIP-2 model for contextual question answering.
-Interactive Q&A: Users can ask multiple questions about an image within a single session, making the application highly interactive.
-Efficient GPU Utilization: Automatically detects GPU availability and uses it to accelerate processing if available.
-Setup Instructions
-1. Clone the Repository
+This project uses the BLIP-2 (Bootstrapping Language-Image Pre-training) model, specifically `Salesforce/blip2-opt-2.7b`, from Hugging Face. BLIP-2 combines vision and language pre-training, enabling the model to understand and generate text responses relevant to the visual content of an image.
+
+## Features
+
+- **Image Processing:** Loads an image and processes it with the BLIP-2 model for contextual question answering.
+- **Interactive Q&A:** Users can ask multiple questions about an image within a single session, making the application highly interactive.
+- **Efficient GPU Utilization:** Automatically detects GPU availability and uses it to accelerate processing if available.
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
 First, clone this repository to your local machine:
 
-bash
-Copy code
 git clone https://github.com/Veer-w/image-question-answering-blip2.git
 cd image-question-answering-blip2
 2. Install Dependencies
 Create a virtual environment (optional but recommended) and install dependencies from the requirements.txt file:
 
-bash
-Copy code
+
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate      # For MacOS/Linux
@@ -35,7 +38,6 @@ The Salesforce/blip2-opt-2.7b model will automatically download when you run the
 Place your target image (e.g., image.png) in the project folder, and execute the script:
 
 bash
-Copy code
 python main.py
 Usage
 Load the Image: Make sure image.png is in the directory or specify another image in the code.
@@ -48,8 +50,7 @@ README.md: Project description and setup instructions.
 Example Interaction
 When running the code, the console interaction would look like:
 
-plaintext
-Copy code
+
 Ask a question about the image (or type 'exit' to quit): What is in the image?
 Answer: "A dog sitting in a park."
 
@@ -61,8 +62,6 @@ Exiting the question loop.
 Requirements
 Dependencies are specified in the requirements.txt file:
 
-plaintext
-Copy code
 torch==2.0.0
 transformers==4.30.0
 Pillow==9.5.0
@@ -73,3 +72,12 @@ Pillow: A library for image processing, used here to load images.
 Acknowledgements
 Salesforce Research: For developing the BLIP-2 model architecture.
 Hugging Face: For hosting pre-trained models and providing the transformers library, which simplifies model deployment.
+markdown
+
+### Instructions
+1. Copy the entire content above.
+2. Open your `README.md` file in your project directory.
+3. Paste the content into the file.
+4. Save the file.
+
+This README is structured to provide clear instructions and information about your project, following best practices for Markdown formatting. If you need any further adjustments or additions, feel free to let me know!
