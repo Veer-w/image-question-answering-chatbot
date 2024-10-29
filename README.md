@@ -1,83 +1,35 @@
-# Image Question-Answering System using BLIP-2
+# Image Question Answering with BLIP2
 
-This repository hosts an interactive question-answering system that uses the BLIP-2 (Bootstrapping Language-Image Pre-training) model from Hugging Face to answer questions based on image content. By loading an image and entering a question, users can get AI-generated responses that analyze and describe elements of the image.
+This Python script uses the BLIP2 (Bidirectional Language-Image Pretraining) model from Salesforce to perform image question answering. Users can input an image and ask questions about it, and the model will generate an answer.
 
-## Model Overview
+## Requirements
 
-This project uses the BLIP-2 (Bootstrapping Language-Image Pre-training) model, specifically `Salesforce/blip2-opt-2.7b`, from Hugging Face. BLIP-2 combines vision and language pre-training, enabling the model to understand and generate text responses relevant to the visual content of an image.
+- Python 3.7 or later
+- PyTorch
+- Transformers library
+- Pillow (PIL)
 
-## Features
+You can install the required packages using pip:
 
-- **Image Processing:** Loads an image and processes it with the BLIP-2 model for contextual question answering.
-- **Interactive Q&A:** Users can ask multiple questions about an image within a single session, making the application highly interactive.
-- **Efficient GPU Utilization:** Automatically detects GPU availability and uses it to accelerate processing if available.
+## Usage
 
-## Setup Instructions
+1. Place the image you want to use in the same directory as the `model.py` file, and name it `image.png`.
+2. Run the `model.py` script:
+3. The script will prompt you to ask a question about the image. Type your question and press Enter.
+4. The model will generate an answer and print it to the console.
+5. To exit the question-answering loop, type "exit" and press Enter.
 
-### 1. Clone the Repository
+## How it Works
 
-First, clone this repository to your local machine:
+The script uses the pre-trained BLIP2 model from Salesforce to perform image question answering. The model is loaded from the Hugging Face Transformers library, and the `AutoProcessor` class is used to preprocess the input image and question.
 
-git clone https://github.com/Veer-w/image-question-answering-blip2.git
-cd image-question-answering-blip2
-2. Install Dependencies
-Create a virtual environment (optional but recommended) and install dependencies from the requirements.txt file:
+The script enters a loop where it prompts the user to ask a question, then passes the image and question to the BLIP2 model to generate an answer. The generated answer is then printed to the console.
 
+## Limitations
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate      # For MacOS/Linux
-venv\Scripts\activate         # For Windows
+- The script currently only supports a single image, which must be named `image.png` and placed in the same directory as the `model.py` file.
+- The model has a limited ability to answer questions, and its performance may vary depending on the complexity of the question and the content of the image.
 
-# Install dependencies
-pip install -r requirements.txt
-3. Download the Model
-The Salesforce/blip2-opt-2.7b model will automatically download when you run the code, as it’s pulled from Hugging Face’s model repository.
+## License
 
-4. Run the Code
-Place your target image (e.g., image.png) in the project folder, and execute the script:
-
-bash
-python main.py
-Usage
-Load the Image: Make sure image.png is in the directory or specify another image in the code.
-Ask Questions: The program will prompt you to type a question about the image. Type your question and hit Enter.
-Exit: Type "exit" when you’re done to terminate the session.
-File Structure
-main.py: The main script for loading the image and running the Q&A loop.
-requirements.txt: Lists all the dependencies required for this project.
-README.md: Project description and setup instructions.
-Example Interaction
-When running the code, the console interaction would look like:
-
-
-Ask a question about the image (or type 'exit' to quit): What is in the image?
-Answer: "A dog sitting in a park."
-
-Ask a question about the image (or type 'exit' to quit): What color is the dog?
-Answer: "The dog is brown and white."
-
-Ask a question about the image (or type 'exit' to quit): exit
-Exiting the question loop.
-Requirements
-Dependencies are specified in the requirements.txt file:
-
-torch==2.0.0
-transformers==4.30.0
-Pillow==9.5.0
-Model and Libraries
-Transformers: The transformers library provides the AutoProcessor and Blip2ForConditionalGeneration modules, which allow seamless integration with Hugging Face models.
-Torch: Used for deep learning computations, allowing for efficient model execution, especially on GPU.
-Pillow: A library for image processing, used here to load images.
-Acknowledgements
-Salesforce Research: For developing the BLIP-2 model architecture.
-Hugging Face: For hosting pre-trained models and providing the transformers library, which simplifies model deployment.
-markdown
-
-### Instructions
-1. Copy the entire content above.
-2. Open your `README.md` file in your project directory.
-3. Paste the content into the file.
-4. Save the file.
-
-This README is structured to provide clear instructions and information about your project, following best practices for Markdown formatting. If you need any further adjustments or additions, feel free to let me know!
+This project is licensed under the [MIT License](LICENSE).
