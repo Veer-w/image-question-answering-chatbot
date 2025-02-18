@@ -7,7 +7,7 @@ model = Blip2ForConditionalGeneration.from_pretrained("Salesforce/blip2-opt-2.7b
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-image = Image.open("image.png")  
+image = Image.open("add_your_image.png")  
 while True:
     
     question = input("Ask a question about the image (or type 'exit' to quit): ")
